@@ -1,0 +1,54 @@
+body {
+   font-family: Arial, sans-serif;
+   text-align: center;
+   margin: 20px;
+}
+
+h1 {
+   color: #201f2f;
+}
+
+form {
+   margin-bottom: 20px;
+   background-color: #c6dbe0;
+}
+
+input,
+select,
+button {
+   padding: 8px;
+   margin: 5px;
+   font-size: 16px;
+}
+#subTask {
+  border: none;
+  color: #FFFFFF;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: auto;
+  background-color: #781515;
+  transition: background-color 0.3s ease;
+}
+
+table {
+   width: 100%;
+   border-collapse: collapse;
+   margin-top: 20px;
+   background-color: #eaecec;
+}
+
+th,
+td {
+   padding: 10px;
+   border: 1px solid #ebebfc;
+}
+
+th {
+   background-color: #f4f4f4;
+}
+
+td {
+   text-align: center;
+}
