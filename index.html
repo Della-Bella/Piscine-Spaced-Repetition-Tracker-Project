@@ -1,8 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-  </body>
+   <head>
+      <title>Repetition Tasks </title>
+      <link rel="stylesheet" type="text/css" href="style.css" />
+   </head>
+   <body>
+      <h1>Space Repetition Tasks</h1>
+
+      <!-- User Drop-down-->
+      <div id="container">
+         <select id="userSelect">
+            <!-- Options will be dynamically added here via JavaScript -->
+         </select>
+      </div>
+      <!-- End Drop-down -->
+
+      <!-- Form Inputs -->
+      <div id="agenda">
+         <form id="topicForm">
+            <label for="taskName">Task Name</label>
+            <input type="text" id="taskName" name="taskName" required />
+
+            <label for="taskDate">Date</label>
+            <input type="date" id="taskDate" name="taskName" required />
+
+            <label for="subTask"></label>
+            <button type="submit" id="subTask">Add Task</button>
+         </form>
+      </div>
+      <!-- End Form Inputs -->
+
+      <!-- Study Schedule Table -->
+      <div id="topicFormContainer">
+         <table>
+            <thead>
+               <tr>
+                  <th>Topic</th>
+                  <th>Start Date</th>
+                  <th>1 Week</th>
+                  <th>1 Month</th>
+                  <th>3 Months</th>
+                  <th>6 Months</th>
+                  <th>1 Year</th>
+               </tr>
+            </thead>
+            <tbody id="schedule-body">
+               <!-- Topics will be added dynamically -->
+            </tbody>
+         </table>
+      </div>
+      <script type="module" src="script.js"></script>
+   </body>
 </html>
