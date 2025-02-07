@@ -2,22 +2,28 @@
 export function calculateRevisionDates(startDate) {
    const start = new Date(startDate);
    // console.log("calculateRevisionDates called with startDate:", startDate);
+   const oneWeekDate = new Date(start);
+   const oneMonthDate = new Date(start);
+   const threeMonthsDate = new Date(start);
+   const sixMonthsDate = new Date(start);
+   const oneYearDate = new Date(start);
+
    return {
       startDate: startDate,
       oneWeek: new Date(
-         start.getTime() + 7 * 24 * 60 * 60 * 1000
+         oneWeekDate.getTime() + 7 * 24 * 60 * 60 * 1000
       ).toISOString(),
       oneMonth: new Date(
-         start.getTime() + 30 * 24 * 60 * 60 * 1000
+         oneMonthDate.setMonth(oneMonthDate.getMonth() + 1)
       ).toISOString(),
       threeMonths: new Date(
-         start.getTime() + 3 * 30 * 24 * 60 * 60 * 1000
+         threeMonthsDate.setMonth(threeMonthsDate.getMonth() + 3)
       ).toISOString(),
       sixMonths: new Date(
-         start.getTime() + 6 * 30 * 24 * 60 * 60 * 1000
+         sixMonthsDate.setMonth(sixMonthsDate.getMonth() + 6)
       ).toISOString(),
       oneYear: new Date(
-         start.setFullYear(start.getFullYear() + 1)
+         oneYearDate.setFullYear(oneYearDate.getFullYear() + 1)
       ).toISOString(),
    };
 }
