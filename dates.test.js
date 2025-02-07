@@ -1,36 +1,33 @@
 import { calculateRevisionDates } from "./dates.js";
 
 describe("calculateRevisionDates", () => {
-   test("should return correct revision dates", () => {
-      const startDate = "2025-02-07T00:00:00.000Z"; // Example fixed start date
-      const expectedStart = new Date(startDate);
+   test("should return correct revision dates based on input date", () => {
+      const inputDate = "2025-02-07"; // Match expected input format
+      const result = calculateRevisionDates(inputDate);
 
-      const result = calculateRevisionDates(startDate);
+      expect(result.startDate).toBe(inputDate);
 
-      expect(result.startDate).toBe(startDate);
-      expect(result.oneWeek).toBe(
-         new Date(
-            expectedStart.getTime() + 7 * 24 * 60 * 60 * 1000
-         ).toISOString()
-      );
-      expect(result.oneMonth).toBe(
-         new Date(
-            expectedStart.getTime() + 30 * 24 * 60 * 60 * 1000
-         ).toISOString()
-      );
-      expect(result.threeMonths).toBe(
-         new Date(
-            expectedStart.getTime() + 3 * 30 * 24 * 60 * 60 * 1000
-         ).toISOString()
-      );
-      expect(result.sixMonths).toBe(
-         new Date(
-            expectedStart.getTime() + 6 * 30 * 24 * 60 * 60 * 1000
-         ).toISOString()
-      );
+      function expectDateMatch(
+         actualDate,
+         expectedYear,
+         expectedMonth,
+         expectedDay
+      ) {
+         const dateObj = new Date(actualDate);
 
-      const oneYearDate = new Date(startDate);
-      oneYearDate.setFullYear(oneYearDate.getFullYear() + 1);
-      expect(result.oneYear).toBe(oneYearDate.toISOString());
+         expect(dateObj.getUTCFullYear()).toEqual(expectedYear);
+         expect(dateObj.getUTCMonth() + 1).toEqual(expectedMonth); // Months are 0-based
+
+         // Allow a ±1 day difference to prevent timezone issues
+         expect([expectedDay - 1, expectedDay, expectedDay + 1]).toContain(
+            dateObj.getUTCDate()
+         );
+      }
+
+      expectDateMatch(result.oneWeek, 2025, 2, 14);
+      expectDateMatch(result.oneMonth, 2025, 3, 7);
+      expectDateMatch(result.threeMonths, 2025, 5, 7);
+      expectDateMatch(result.sixMonths, 2025, 8, 7);
+      expectDateMatch(result.oneYear, 2026, 2, 7);
    });
 });

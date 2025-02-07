@@ -1,16 +1,30 @@
 {
-   "name": "piscine-spaced-repetition-tracker-project",
-   "version": "1.0.0",
-   "description": "A project using Jest for testing",
-   "main": "index.js",
    "type": "module",
-   "scripts": {
-      "test": "jest"
+   "name": "project-spaced-repetition-tracker",
+   "version": "1.0.0",
+   "description": "At Code Your Future, we like to use a learning technique called spaced repetition. The technique involves reviewing a topic over increasing time gaps (e.g. after one week, one month, three months, six months, one year).",
+   "main": "dates.js",
+   "directories": {
+      "test": "test"
    },
-   "devDependencies": {
-      "jest": "^29.0.0"
+   "dependencies": {
+      "import-local": "^3.2.0",
+      "jest": "^29.7.0",
+      "jest-cli": "^29.7.0"
+   },
+   "devDependencies": {},
+   "scripts": {
+      "test": "node --experimental-vm-modules node_modules/.bin/jest"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Pezhman-Azizi/Piscine-Spaced-Repetition-Tracker-Project.git"
    },
    "keywords": [],
    "author": "",
-   "license": "ISC"
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/Pezhman-Azizi/Piscine-Spaced-Repetition-Tracker-Project/issues"
+   },
+   "homepage": "https://github.com/Pezhman-Azizi/Piscine-Spaced-Repetition-Tracker-Project#readme"
 }

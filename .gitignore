@@ -1,1 +1,7 @@
+<<<<<<< HEAD
 node_modules/
+=======
+node_modules/
+package-lock.json
+style.css
+>>>>>>> f2dfd39aaacbd8a8896cf75c239ce1d6f6778742
