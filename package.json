@@ -1,0 +1,16 @@
+{
+   "name": "piscine-spaced-repetition-tracker-project",
+   "version": "1.0.0",
+   "description": "A project using Jest for testing",
+   "main": "index.js",
+   "type": "module",
+   "scripts": {
+      "test": "jest"
+   },
+   "devDependencies": {
+      "jest": "^29.0.0"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC"
+}
